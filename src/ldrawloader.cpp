@@ -27,7 +27,7 @@
 
 #include <algorithm>
 #include <assert.h>
-#include <intrin.h>
+#include <mm_malloc.h>
 #include <stdlib.h>
 
 namespace ldr {
