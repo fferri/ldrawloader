@@ -40,6 +40,11 @@
 #include <unordered_set>
 #include <vector>
 
+#ifndef FLT_MAX
+#include <limits>
+#define FLT_MAX std::numeric_limits<float>::max()
+#endif // FLT_MAX
+
 namespace ldr {
 
 struct Loader
