@@ -27,6 +27,7 @@
 
 #pragma once
 
+#include <stddef.h>
 #include <stdint.h>
 
 // LDR_CFG_THREADSAFE
