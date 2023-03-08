@@ -2230,8 +2230,12 @@ LdrResult Loader::registerInternalPart(const char* filename, const std::string& 
 
 bool Loader::findLibraryFile(const char* filename, std::string& foundname, bool allowPrimitives, bool& isPrimitive)
 {
+  std::string filenameFixed(filename);
+#ifndef WIN32
+  std::replace(filenameFixed.begin(), filenameFixed.end(), '\\', '/');
+#endif
   for(uint32_t i = allowPrimitives ? (m_config.partHiResPrimitives ? 0 : 1) : PRIMITIVE_PATHS; i < SEARCH_PATHS; i++) {
-    foundname = m_searchPaths[i] + filename;
+    foundname = m_searchPaths[i] + filenameFixed;
 
     FILE* f     = fopen(foundname.c_str(), "rb");
     bool  found = f != nullptr;
