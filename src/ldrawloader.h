@@ -104,7 +104,11 @@ extern "C" {
 #define LDR_INVALID_IDX (~0)
 #define LDR_INVALID_SHAPETYPE 0
 
+#ifdef __GNUC__
+#define LDR_RESTRICT
+#else
 #define LDR_RESTRICT __restrict
+#endif
 
 typedef enum LdrResult
 {
