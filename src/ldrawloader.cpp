@@ -27,7 +27,11 @@
 
 #include <algorithm>
 #include <assert.h>
+#ifdef WIN32
+#include <intrin.h>
+#else
 #include <mm_malloc.h>
+#endif
 #include <stdlib.h>
 
 namespace ldr {

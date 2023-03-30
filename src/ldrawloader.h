@@ -27,7 +27,9 @@
 
 #pragma once
 
+#ifndef WIN32
 #include <stddef.h>
+#endif
 #include <stdint.h>
 
 // LDR_CFG_THREADSAFE
