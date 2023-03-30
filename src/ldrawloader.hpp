@@ -45,6 +45,11 @@
 #define FLT_MAX std::numeric_limits<float>::max()
 #endif // FLT_MAX
 
+#ifdef __GNUC__
+#include <string.h>
+#include <math.h>
+#endif
+
 namespace ldr {
 
 struct Loader
